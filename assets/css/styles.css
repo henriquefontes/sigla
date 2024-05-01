@@ -50,6 +50,34 @@ body {
   font-size: 20px;
 }
 
+.hamburger-menu {
+  min-width: 250px;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+  animation-duration: 0.4s;
+  animation-name: translateLeft;
+  animation-direction: alternate;
+}
+
+.hamburger-menu h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.hamburger-menu-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.hamburger-menu-list button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 main {
   padding: 60px 40px;
 }
@@ -67,6 +95,14 @@ button {
   padding: 8px 15px;
   border: 0;
   text-wrap: nowrap;
+  background-color: var(--primary-color);
+  color: white;
+  transition: 0.3s background-color;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--dark-primary-color);
 }
 
 button:disabled {
@@ -78,11 +114,33 @@ button:disabled {
 .light-button {
   background-color: white;
   color: var(--primary-color);
-  transition: 0.3s background-color;
 }
 
 .light-button:hover,
 .light-button:focus {
+  background-color: var(--gray-background);
+}
+
+button.hamburger {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+button.hamburger:hover {
+  background-color: var(--dark-primary-color);
+}
+
+button.light-no-shadow {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: var(--text-color);
+}
+
+button.light-no-shadow:hover {
   background-color: var(--gray-background);
 }
 
@@ -213,7 +271,7 @@ tr.selected td {
   color: white;
 }
 
-.modal-wrapper {
+.blur-wrapper {
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -222,9 +280,23 @@ tr.selected td {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(1px);
-  display: flex;
-  justify-content: center;
+  display: none;
   align-items: center;
+  animation-duration: 0.3s;
+  animation-name: blurIn;
+  animation-direction: alternate;
+}
+
+.blur-wrapper.modal-wrapper {
+  justify-content: center;
+}
+
+.blur-wrapper.hamburger-wrapper {
+  justify-content: flex-end;
+}
+
+.blur-wrapper.open {
+  display: flex;
 }
 
 .modal {
@@ -243,12 +315,9 @@ tr.selected td {
   flex-direction: column;
 }
 
-.modal > div {
-  padding: 20px 40px;
-}
-
 .modal-info {
-  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
 }
 
 .modal-info .subtitle {
@@ -267,30 +336,35 @@ tr.selected td {
   margin: 15px;
 }
 
-.modal-body-wrapper {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
-  row-gap: 20px;
-  column-gap: 10px;
-}
-
 .modal-body {
-  max-height: 100%;
-  padding-top: 10px;
+  min-height: calc(100% - 140px);
+  max-height: calc(100% - 140px);
+  padding-top: 30px !important;
   overflow: scroll;
 }
 
-.modal-body > div {
+.modal-body .row {
   margin-bottom: 20px;
 }
 
 .modal-footer {
-  flex: 0 1;
   display: flex;
   gap: 5px;
   justify-content: flex-end;
+}
+
+.modal-info,
+.modal-footer {
+  height: 70px;
+}
+
+.modal-info,
+.modal-body {
+  padding: 20px 40px;
+}
+
+.modal-footer {
+  padding: 15px 40px;
 }
 
 .row {
@@ -300,18 +374,31 @@ tr.selected td {
 
 .input-wrapper {
   position: relative;
+  width: 50%;
 }
 
 .input-wrapper label {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: white;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-color);
   transform: translate(15px, -50%);
   transition: 0.2s all;
+}
+
+.input-wrapper label::before {
+  content: "";
+  width: 100%;
+  height: 9px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(88%);
+  top: 0;
+  z-index: -1;
 }
 
 .input-wrapper input {
@@ -352,5 +439,25 @@ tr.selected td {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+  }
+}
+
+@keyframes translateLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }

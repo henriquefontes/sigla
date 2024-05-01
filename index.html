@@ -23,7 +23,9 @@
         alt="Logo do Instituto Sigla"
         class="header-logo"
       />
-      <i class="fa-solid fa-bars header-icon"></i>
+      <button class="hamburger" data-modal="hamburger">
+        <i class="fa-solid fa-bars header-icon"></i>
+      </button>
     </header>
     <main>
       <div class="topbar">
@@ -32,7 +34,7 @@
           Doações
         </h2>
         <div class="table-buttons">
-          <button class="light-button">
+          <button class="light-button" data-modal="add-donation">
             <i class="fa-solid fa-plus"></i>
             Nova doação
           </button>
@@ -339,7 +341,7 @@
           </tbody>
         </table>
       </div>
-      <div class="modal-wrapper">
+      <div class="blur-wrapper modal-wrapper" data-modal-name="add-donation">
         <div class="modal">
           <div class="modal-info">
             <h2 class="subtitle">
@@ -348,58 +350,110 @@
             </h2>
           </div>
           <hr />
-          <div class="modal-body-wrapper">
-            <div class="modal-body">
-              <div class="row">
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Código</label>
-                </div>
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Data de Coleta</label>
-                </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="input-wrapper">
+                <input type="text" name="codigo" />
+                <label for="codigo">
+                  <i class="fa-solid fa-id-card"></i>
+                  Código
+                </label>
               </div>
-              <div class="row">
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Categoria</label>
-                </div>
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Data de Validade</label>
-                </div>
+              <div class="input-wrapper">
+                <input type="date" name="data_coleta" />
+                <label for="data_coleta">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  Data de Coleta
+                </label>
               </div>
-              <div class="row">
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Item</label>
-                </div>
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Doador</label>
-                </div>
+            </div>
+            <div class="row">
+              <div class="input-wrapper">
+                <input type="text" name="categoria" />
+                <label for="categoria">
+                  <i class="fa-solid fa-list"></i>
+                  Categoria
+                </label>
               </div>
-              <div class="row">
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Quantidade</label>
-                </div>
-                <div class="input-wrapper">
-                  <input type="text" name="teste" id="" />
-                  <label for="teste">Fonte</label>
-                </div>
+              <div class="input-wrapper">
+                <input type="date" name="data_validade" />
+                <label for="data_validade">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  Data de Validade
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-wrapper">
+                <input type="text" name="item" />
+                <label for="item">
+                  <i class="fa-solid fa-hand-holding-heart"></i>
+                  Item
+                </label>
+              </div>
+              <div class="input-wrapper">
+                <input type="text" name="doador" />
+                <label for="doador">
+                  <i class="fa-solid fa-user"></i>
+                  Doador
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-wrapper">
+                <input type="number" name="quantidade" />
+                <label for="quantidade">
+                  <i class="fa-solid fa-list-ol"></i>
+                  Quantidade
+                </label>
+              </div>
+              <div class="input-wrapper">
+                <input type="text" name="fonte" id="" />
+                <label for="fonte">
+                  <i class="fa-solid fa-hashtag"></i>
+                  Fonte
+                </label>
               </div>
             </div>
           </div>
           <hr />
           <div class="modal-footer">
-            <button class="light-button">Nova doação</button>
-            <button class="light-button">Nova doação</button>
+            <button class="">Adicionar</button>
+            <button class="light-button" data-modal="add-donation">
+              Cancelar
+            </button>
           </div>
           <!-- <button class="light-button close-modal-btn">X</button> -->
         </div>
       </div>
+      <div class="blur-wrapper hamburger-wrapper" data-modal-name="hamburger">
+        <div class="hamburger-menu">
+          <div class="hamburger-menu-header">
+            <button class="light-no-shadow" data-modal="hamburger">
+              <i
+                class="fa-solid fa-bars header-icon"
+                style="color: var(--primary-color)"
+              ></i>
+            </button>
+            <h2>Módulos</h2>
+          </div>
+          <div class="hamburger-menu-list">
+            <button class="light-no-shadow">
+              <i class="fa-solid fa-heart"></i>
+              Doações
+            </button>
+            <button class="light-no-shadow">
+              <i class="fa-solid fa-users"></i>
+              Beneficiários
+            </button>
+            <button class="light-no-shadow">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+              Doadores
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
