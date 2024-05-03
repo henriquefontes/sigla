@@ -79,7 +79,7 @@ body {
 }
 
 main {
-  padding: 60px 40px;
+  padding: 40px;
 }
 
 button {
@@ -98,6 +98,8 @@ button {
   background-color: var(--primary-color);
   color: white;
   transition: 0.3s background-color;
+  position: relative;
+  overflow: hidden;
 }
 
 button:hover,
@@ -142,6 +144,17 @@ button.light-no-shadow {
 
 button.light-no-shadow:hover {
   background-color: var(--gray-background);
+}
+
+.ripple {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(182, 182, 182, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transition: width 0.5s, height 0.5s, opacity 0.5s, top 0.5s, left 0.5s;
+  opacity: 1;
 }
 
 .dropdown-wrapper {
@@ -222,7 +235,7 @@ button:focus ~ .button-dropdown {
 }
 
 .table-wrapper {
-  height: 300px;
+  height: 0;
   background-color: white;
   border-radius: 20px;
   overflow: scroll;
