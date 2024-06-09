@@ -19,7 +19,7 @@
       href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
     />
     <link rel="stylesheet" href="./assets/css/overrides.css" />
-    <title>Sigla - Doações</title>
+    <title>Sigla - Beneficiários</title>
   </head>
   <body>
     <header class="main-header">
@@ -35,13 +35,13 @@
     <main>
       <div class="topbar">
         <h2 class="subtitle">
-          <i class="fa-solid fa-heart"></i>
-          Doações
+          <i class="fa-solid fa-users"></i>
+          Beneficiários
         </h2>
         <div class="table-buttons">
-          <button class="light-button" data-modal="add-donation">
+          <button class="light-button" data-modal="add-beneficiarie">
             <i class="fa-solid fa-plus"></i>
-            Nova doação
+            Novo beneficiário
           </button>
         </div>
       </div>
@@ -52,16 +52,12 @@
       <div class="filters">
         <div class="dropdown-wrapper">
           <button class="light-button">
-            Código
+            Nome
             <i class="fa-solid fa-angle-down"></i>
           </button>
           <ul class="button-dropdown">
             <li>
-              <button
-                class="light-button"
-                data-sort="codigo"
-                data-sort-dir="asc"
-              >
+              <button class="light-button" data-sort="nome" data-sort-dir="asc">
                 <i class="fa-solid fa-angle-up"></i>
                 Ordem Crescente
               </button>
@@ -69,7 +65,7 @@
             <li>
               <button
                 class="light-button"
-                data-sort="codigo"
+                data-sort="nome"
                 data-sort-dir="desc"
               >
                 <i class="fa-solid fa-angle-down"></i>
@@ -80,12 +76,16 @@
         </div>
         <div class="dropdown-wrapper">
           <button class="light-button">
-            Item
+            Endereço
             <i class="fa-solid fa-angle-down"></i>
           </button>
           <ul class="button-dropdown">
             <li>
-              <button class="light-button" data-sort="item" data-sort-dir="asc">
+              <button
+                class="light-button"
+                data-sort="endereco"
+                data-sort-dir="asc"
+              >
                 <i class="fa-solid fa-angle-up"></i>
                 Ordem Crescente
               </button>
@@ -93,7 +93,7 @@
             <li>
               <button
                 class="light-button"
-                data-sort="item"
+                data-sort="endereco"
                 data-sort-dir="desc"
               >
                 <i class="fa-solid fa-angle-down"></i>
@@ -104,14 +104,14 @@
         </div>
         <div class="dropdown-wrapper">
           <button class="light-button">
-            Categoria
+            Responsável
             <i class="fa-solid fa-angle-down"></i>
           </button>
           <ul class="button-dropdown">
             <li>
               <button
                 class="light-button"
-                data-sort="categoria"
+                data-sort="responsavel"
                 data-sort-dir="asc"
               >
                 <i class="fa-solid fa-angle-up"></i>
@@ -121,7 +121,7 @@
             <li>
               <button
                 class="light-button"
-                data-sort="categoria"
+                data-sort="responsavel"
                 data-sort-dir="desc"
               >
                 <i class="fa-solid fa-angle-down"></i>
@@ -132,14 +132,14 @@
         </div>
         <div class="dropdown-wrapper">
           <button class="light-button">
-            Data de Coleta
+            Telefone
             <i class="fa-solid fa-angle-down"></i>
           </button>
           <ul class="button-dropdown">
             <li>
               <button
                 class="light-button"
-                data-sort="dataColeta"
+                data-sort="telefone"
                 data-sort-dir="asc"
               >
                 <i class="fa-solid fa-angle-up"></i>
@@ -149,7 +149,7 @@
             <li>
               <button
                 class="light-button"
-                data-sort="dataColeta"
+                data-sort="telefone"
                 data-sort-dir="desc"
               >
                 <i class="fa-solid fa-angle-down"></i>
@@ -160,14 +160,14 @@
         </div>
         <div class="dropdown-wrapper">
           <button class="light-button">
-            Data de Validade
+            Data de Nascimento
             <i class="fa-solid fa-angle-down"></i>
           </button>
           <ul class="button-dropdown">
             <li>
               <button
                 class="light-button"
-                data-sort="dataValidade"
+                data-sort="dataNascimento"
                 data-sort-dir="asc"
               >
                 <i class="fa-solid fa-angle-up"></i>
@@ -177,7 +177,7 @@
             <li>
               <button
                 class="light-button"
-                data-sort="dataValidade"
+                data-sort="dataNascimento"
                 data-sort-dir="desc"
               >
                 <i class="fa-solid fa-angle-down"></i>
@@ -188,14 +188,14 @@
         </div>
         <div class="dropdown-wrapper">
           <button class="light-button">
-            Doador
+            Comorbidades
             <i class="fa-solid fa-angle-down"></i>
           </button>
           <ul class="button-dropdown">
             <li>
               <button
                 class="light-button"
-                data-sort="doador"
+                data-sort="comorbidades"
                 data-sort-dir="asc"
               >
                 <i class="fa-solid fa-angle-up"></i>
@@ -205,35 +205,7 @@
             <li>
               <button
                 class="light-button"
-                data-sort="doador"
-                data-sort-dir="desc"
-              >
-                <i class="fa-solid fa-angle-down"></i>
-                Ordem Decrescente
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div class="dropdown-wrapper">
-          <button class="light-button">
-            Fonte
-            <i class="fa-solid fa-angle-down"></i>
-          </button>
-          <ul class="button-dropdown">
-            <li>
-              <button
-                class="light-button"
-                data-sort="fonte"
-                data-sort-dir="asc"
-              >
-                <i class="fa-solid fa-angle-up"></i>
-                Ordem Crescente
-              </button>
-            </li>
-            <li>
-              <button
-                class="light-button"
-                data-sort="fonte"
+                data-sort="comorbidades"
                 data-sort-dir="desc"
               >
                 <i class="fa-solid fa-angle-down"></i>
@@ -275,19 +247,17 @@
         <table
           cellspacing="0"
           cellpadding="0"
-          data-route="donations"
-          data-modal-edit="add-donation"
+          data-route="beneficiaries"
+          data-modal-edit="add-beneficiarie"
         >
           <thead>
             <tr>
-              <th data-prop="codigo">Código</th>
-              <th data-prop="categoria">Categoria</th>
-              <th data-prop="item">Item</th>
-              <th data-prop="quantidade">Quantidade</th>
-              <th data-prop="dataColeta">Data de Coleta</th>
-              <th data-prop="dataValidade">Data de Validade</th>
-              <th data-prop="doador">Doador</th>
-              <th data-prop="fonte">Fonte</th>
+              <th data-prop="nome">Nome</th>
+              <th data-prop="endereco">Endereço</th>
+              <th data-prop="responsavel">Responsável</th>
+              <th data-prop="telefone">Telefone</th>
+              <th data-prop="dataNascimento">Data de Nascimento</th>
+              <th data-prop="comorbidades">Comorbidades</th>
               <th data-prop="status">Status</th>
               <th></th>
             </tr>
@@ -295,84 +265,71 @@
           <tbody></tbody>
         </table>
       </div>
-      <div class="blur-wrapper modal-wrapper" data-modal-name="add-donation">
+      <div
+        class="blur-wrapper modal-wrapper"
+        data-modal-name="add-beneficiarie"
+      >
         <div class="modal">
           <div class="modal-info">
             <h2 class="subtitle">
-              <i class="fa-solid fa-hand-holding-heart"></i>
-              Cadastro de Doação
+              <i class="fa-solid fa-user-plus"></i>
+              Cadastro de Beneficiário
             </h2>
           </div>
           <hr />
           <div class="modal-body">
             <form
               method="post"
-              id="donation"
-              data-route="donations"
+              id="beneficiarie"
+              data-route="beneficiaries"
               autocomplete="off"
             >
               <input type="hidden" name="id" />
               <div class="row">
                 <div class="input-wrapper">
-                  <input type="text" name="codigo" required />
-                  <label for="codigo">
+                  <input type="text" name="nome" required />
+                  <label for="nome">
                     <i class="fa-solid fa-id-card"></i>
-                    Código
+                    Nome
                   </label>
                 </div>
                 <div class="input-wrapper">
-                  <input type="date" name="dataColeta" required />
-                  <label for="dataColeta">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    Data de Coleta
+                  <input type="text" name="endereco" required />
+                  <label for="endereco">
+                    <i class="fa-solid fa-id-card"></i>
+                    Endereço
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-wrapper">
-                  <input type="text" name="categoria" required />
-                  <label for="categoria">
+                  <input type="text" name="responsavel" required />
+                  <label for="responsavel">
                     <i class="fa-solid fa-list"></i>
-                    Categoria
+                    Responsável
                   </label>
                 </div>
                 <div class="input-wrapper">
-                  <input type="date" name="dataValidade" required />
-                  <label for="dataValidade">
+                  <input type="tel" name="telefone" required />
+                  <label for="telefone">
                     <i class="fa-solid fa-calendar-days"></i>
-                    Data de Validade
+                    Telefone
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-wrapper">
-                  <input type="text" name="item" required />
-                  <label for="item">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                    Item
+                  <input type="date" name="dataNascimento" required />
+                  <label for="dataNascimento">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Data de Nascimento
                   </label>
                 </div>
                 <div class="input-wrapper">
-                  <input type="text" name="doador" />
-                  <label for="doador">
+                  <input type="text" name="comorbidades" />
+                  <label for="comorbidades">
                     <i class="fa-solid fa-user"></i>
-                    Doador
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-wrapper">
-                  <input type="number" name="quantidade" required />
-                  <label for="quantidade">
-                    <i class="fa-solid fa-list-ol"></i>
-                    Quantidade
-                  </label>
-                </div>
-                <div class="input-wrapper">
-                  <input type="text" name="fonte" id="" />
-                  <label for="fonte">
-                    <i class="fa-solid fa-hashtag"></i>
-                    Fonte
+                    Comorbidades
                   </label>
                 </div>
               </div>
@@ -380,7 +337,7 @@
                 <div class="input-wrapper">
                   <input type="text" name="status" required />
                   <label for="status">
-                    <i class="fa-solid fa-info"></i>
+                    <i class="fa-solid fa-list-ol"></i>
                     Status
                   </label>
                 </div>
@@ -389,8 +346,8 @@
           </div>
           <hr />
           <div class="modal-footer">
-            <button type="submit" form="donation">Adicionar</button>
-            <button class="light-button" data-modal="add-donation">
+            <button type="submit" form="beneficiarie">Adicionar</button>
+            <button class="light-button" data-modal="add-beneficiarie">
               Cancelar
             </button>
           </div>
