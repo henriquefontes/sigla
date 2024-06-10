@@ -263,10 +263,10 @@ document.querySelectorAll("[data-sort]").forEach((button) => {
 
     table.data.sort((a, b) => {
       if (a[sortField] < b[sortField]) {
-        return sortDir == "asc" ? -1 : 1;
+        return sortDir == "asc" ? 1 : -1;
       }
       if (a[sortField] > b[sortField]) {
-        return sortDir == "asc" ? 1 : -1;
+        return sortDir == "asc" ? -1 : 1;
       }
 
       return 0;
