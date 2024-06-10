@@ -126,8 +126,6 @@ async function handleFormSubmit(form) {
 
   changeModalVisibility("loading");
 
-  const data = document.querySelector("table").data;
-
   const createdData = await api[method.toLowerCase()](route, {
     ...formDataToObject(formData),
   });
