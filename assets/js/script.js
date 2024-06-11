@@ -126,8 +126,6 @@ async function handleFormSubmit(form) {
 
   changeModalVisibility("loading");
 
-  const data = document.querySelector("table").data;
-
   const createdData = await api[method.toLowerCase()](route, {
     ...formDataToObject(formData),
   });
@@ -266,10 +264,10 @@ document.querySelectorAll("[data-sort]").forEach((button) => {
 
     table.data.sort((a, b) => {
       if (a[sortField] < b[sortField]) {
-        return sortDir == "asc" ? -1 : 1;
+        return sortDir == "asc" ? 1 : -1;
       }
       if (a[sortField] > b[sortField]) {
-        return sortDir == "asc" ? 1 : -1;
+        return sortDir == "asc" ? -1 : 1;
       }
 
       return 0;
