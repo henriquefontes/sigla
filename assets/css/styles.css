@@ -142,8 +142,10 @@ button.light-no-shadow {
   color: var(--text-color);
 }
 
-button.light-no-shadow:hover {
+button.light-no-shadow:hover,
+button.light-no-shadow.active {
   background-color: var(--gray-background);
+  border: 0;
 }
 
 button a {
