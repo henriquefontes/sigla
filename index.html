@@ -330,7 +330,11 @@
               </div>
               <div class="row">
                 <div class="input-wrapper">
-                  <input type="text" name="categoria" required />
+                  <select
+                    name="categoria"
+                    data-route="categories"
+                    data-field="nome"
+                  ></select>
                   <label for="categoria">
                     <i class="fa-solid fa-list"></i>
                     Categoria
@@ -398,7 +402,7 @@
                     data-field="nome"
                   ></select>
                   <label for="beneficiario">
-                    <i class="fa-solid fa-circle-info"></i>
+                    <i class="fa-solid fa-user"></i>
                     Beneficiário
                   </label>
                 </div>
@@ -451,6 +455,12 @@
               <a href="./doadores.html">
                 <i class="fa-solid fa-hand-holding-heart"></i>
                 Doadores
+              </a>
+            </button>
+            <button class="light-no-shadow">
+              <a href="./categorias.html">
+                <i class="fa-solid fa-list"></i>
+                Categorias
               </a>
             </button>
           </div>

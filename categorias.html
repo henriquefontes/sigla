@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/de3ba1af13.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/overrides.css" />
+    <title>Sigla - Categorias</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <img
+        src="./assets/img/logo.svg"
+        alt="Logo do Instituto Sigla"
+        class="header-logo"
+      />
+      <button class="hamburger" data-modal="hamburger">
+        <i class="fa-solid fa-bars header-icon"></i>
+      </button>
+    </header>
+    <main>
+      <div class="topbar">
+        <h2 class="subtitle">
+          <i class="fa-solid fa-list"></i>
+          Categorias
+        </h2>
+        <div class="table-buttons">
+          <button class="light-button" data-modal="add-categorie">
+            <i class="fa-solid fa-plus"></i>
+            Nova categoria
+          </button>
+        </div>
+      </div>
+      <h2 class="subtitle">
+        <i class="fa-solid fa-filter"></i>
+        Filtros
+      </h2>
+      <div class="filters">
+        <div class="dropdown-wrapper">
+          <button class="light-button">
+            Nome
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
+          <ul class="button-dropdown">
+            <li>
+              <button
+                class="light-button"
+                data-sort="codigo"
+                data-sort-dir="asc"
+              >
+                <i class="fa-solid fa-angle-up"></i>
+                Ordem Crescente
+              </button>
+            </li>
+            <li>
+              <button
+                class="light-button"
+                data-sort="codigo"
+                data-sort-dir="desc"
+              >
+                <i class="fa-solid fa-angle-down"></i>
+                Ordem Decrescente
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table
+          cellspacing="0"
+          cellpadding="0"
+          data-route="categories"
+          data-modal-edit="add-categorie"
+        >
+          <thead>
+            <tr>
+              <th data-prop="nome">Nome</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="blur-wrapper modal-wrapper" data-modal-name="add-categorie">
+        <div class="modal">
+          <div class="modal-info">
+            <h2 class="subtitle">
+              <i class="fa-solid fa-list"></i>
+              Cadastro de Categoria
+            </h2>
+          </div>
+          <hr />
+          <div class="modal-body">
+            <form
+              method="post"
+              id="donation"
+              data-route="categories"
+              autocomplete="off"
+            >
+              <input type="text" name="id" style="display: none" />
+              <div class="row">
+                <div class="input-wrapper" style="width: 100%">
+                  <input type="text" name="nome" required />
+                  <label for="nome">
+                    <i class="fa-solid fa-id-card"></i>
+                    Nome
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <hr />
+          <div class="modal-footer">
+            <button type="submit" form="donation">Adicionar</button>
+            <button class="light-button" data-modal="add-categorie">
+              Cancelar
+            </button>
+          </div>
+          <!-- <button class="light-button close-modal-btn">X</button> -->
+        </div>
+      </div>
+      <div class="blur-wrapper modal-wrapper" data-modal-name="loading">
+        <div class="loading-wave">
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+        </div>
+      </div>
+      <div class="blur-wrapper hamburger-wrapper" data-modal-name="hamburger">
+        <div class="hamburger-menu">
+          <div class="hamburger-menu-header">
+            <button class="light-no-shadow" data-modal="hamburger">
+              <i
+                class="fa-solid fa-bars header-icon"
+                style="color: var(--primary-color)"
+              ></i>
+            </button>
+            <h2>Módulos</h2>
+          </div>
+          <div class="hamburger-menu-list">
+            <button class="light-no-shadow">
+              <a href="./index.html">
+                <i class="fa-solid fa-heart"></i>
+                Doações
+              </a>
+            </button>
+            <button class="light-no-shadow">
+              <a href="./beneficiarios.html">
+                <i class="fa-solid fa-users"></i>
+                Beneficiários
+              </a>
+            </button>
+            <button class="light-no-shadow">
+              <a href="./doadores.html">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                Doadores
+              </a>
+            </button>
+            <button class="light-no-shadow">
+              <a href="./categorias.html">
+                <i class="fa-solid fa-list"></i>
+                Categorias
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

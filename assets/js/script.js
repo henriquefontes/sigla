@@ -32,7 +32,7 @@ function renderTableData() {
         return `<td data-prop="${prop}">` + value + `</td>`;
       })
       .join("")}
-        <td style="display: flex; gap: 5px; justify-content: center; width: 100%; max-width: 100%;">
+        <td style="display: flex; gap: 5px; justify-content: flex-end; width: 100%; max-width: 100%; padding-right: 50px;">
           <button onclick="changeModalVisibility('${modalName}', '${val.id}')">
             <i class="fa-solid fa-pen-to-square"></i>
           </button>
