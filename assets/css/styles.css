@@ -432,7 +432,8 @@ tr.selected td {
   z-index: -1;
 }
 
-.input-wrapper input {
+.input-wrapper input,
+.input-wrapper select {
   width: 100%;
   border: 1px solid var(--dark-gray-background);
   background-color: white;

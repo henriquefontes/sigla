@@ -260,7 +260,7 @@
                 <div class="input-wrapper">
                   <input type="text" name="endereco" required />
                   <label for="endereco">
-                    <i class="fa-solid fa-id-card"></i>
+                    <i class="fa-solid fa-map-location"></i>
                     Endereço
                   </label>
                 </div>
@@ -269,14 +269,17 @@
                 <div class="input-wrapper">
                   <input type="tel" name="telefone" required />
                   <label for="telefone">
-                    <i class="fa-solid fa-calendar-days"></i>
+                    <i class="fa-solid fa-phone"></i>
                     Telefone
                   </label>
                 </div>
                 <div class="input-wrapper">
-                  <input type="text" name="tipo" required />
+                  <select name="tipo">
+                    <option value="Pessoa Física">Pessoa Física</option>
+                    <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                  </select>
                   <label for="tipo">
-                    <i class="fa-solid fa-calendar-days"></i>
+                    <i class="fa-solid fa-pager"></i>
                     Tipo
                   </label>
                 </div>
@@ -285,14 +288,17 @@
                 <div class="input-wrapper">
                   <input type="text" name="documento" required />
                   <label for="documento">
-                    <i class="fa-solid fa-calendar-days"></i>
+                    <i class="fa-solid fa-passport"></i>
                     CPF/CNPJ
                   </label>
                 </div>
                 <div class="input-wrapper">
-                  <input type="text" name="status" />
+                  <select name="status">
+                    <option value="Ativo">Ativo</option>
+                    <option value="Desativado">Desativado</option>
+                  </select>
                   <label for="status">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-circle-info"></i>
                     Status
                   </label>
                 </div>

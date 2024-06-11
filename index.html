@@ -353,7 +353,11 @@
                   </label>
                 </div>
                 <div class="input-wrapper">
-                  <input type="text" name="doador" />
+                  <select
+                    name="doador"
+                    data-route="donors"
+                    data-field="nome"
+                  ></select>
                   <label for="doador">
                     <i class="fa-solid fa-user"></i>
                     Doador
@@ -378,10 +382,24 @@
               </div>
               <div class="row">
                 <div class="input-wrapper">
-                  <input type="text" name="status" required />
+                  <select name="status">
+                    <option value="Ativo">Ativo</option>
+                    <option value="Desativado">Desativado</option>
+                  </select>
                   <label for="status">
-                    <i class="fa-solid fa-info"></i>
+                    <i class="fa-solid fa-circle-info"></i>
                     Status
+                  </label>
+                </div>
+                <div class="input-wrapper">
+                  <select
+                    name="beneficiario"
+                    data-route="beneficiaries"
+                    data-field="nome"
+                  ></select>
+                  <label for="beneficiario">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Beneficiário
                   </label>
                 </div>
               </div>

@@ -167,6 +167,7 @@ function changeModalVisibility(modal, id) {
 
   if ($form != null) {
     $form.reset();
+    $form.querySelectorAll("select").forEach((sel) => (sel.value = ""));
     $modal.querySelector('[type="submit"]').textContent = !id
       ? "Adicionar"
       : "Salvar";
@@ -303,6 +304,33 @@ document.querySelectorAll(".dropdown-wrapper").forEach((wrapper) => {
   });
 });
 
+function loadDropdownData() {
+  return new Promise(async (resolve, reject) => {
+    changeModalVisibility("loading");
+
+    const selects = document.querySelectorAll("select[data-route]");
+
+    for (const select of selects) {
+      const oldValue = select.value;
+      const route = select.dataset.route;
+      const field = select.dataset.field;
+      const data = await api.get(route);
+      const options = data.reduce(
+        (acc, val) =>
+          acc + `<option value=${val[field]}>${val[field]}</option>`,
+        ""
+      );
+
+      select.innerHTML = options;
+
+      if (oldValue) select.value = oldValue;
+    }
+
+    changeModalVisibility("loading");
+    resolve();
+  });
+}
+
 Element.prototype.getParentElement = function (parentElementSelector) {
   let parentElement = this.parentElement;
 
@@ -316,4 +344,7 @@ Element.prototype.getParentElement = function (parentElementSelector) {
   return parentElement;
 };
 
-loadTableData(document.querySelector("table"));
+(async () => {
+  await loadTableData(document.querySelector("table"));
+  await loadDropdownData();
+})();
